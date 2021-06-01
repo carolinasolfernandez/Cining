@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListPreference
+        android:icon="@drawable/ic_baseline_language_24"
+        android:negativeButtonText="@string/cancel"
+        app:defaultValue="auto"
+        app:entries="@array/lang_text"
+        app:entryValues="@array/lang_values"
+        app:key="lang"
+        app:title="@string/language"
+        app:useSimpleSummaryProvider="true" />
+
+    <ListPreference
+        android:icon="@drawable/ic_baseline_invert_colors_24"
+        android:negativeButtonText="@string/cancel"
+        app:defaultValue="auto"
+        app:entries="@array/theme_text"
+        app:entryValues="@array/theme_values"
+        app:key="theme"
+        app:title="@string/theme"
+        app:useSimpleSummaryProvider="true" />
+
+</PreferenceScreen>

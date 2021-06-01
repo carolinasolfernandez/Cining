@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_list_graph"
+    app:startDestination="@id/cineList">
+    <fragment
+        android:id="@+id/cineList"
+        android:name="com.csf.cining.fragments.cines.ListFragment"
+        android:label="fragment_cine_list"
+        tools:layout="@layout/fragment_cine_list">
+        <action
+            android:id="@+id/action_cineList_to_cineDetail"
+            app:destination="@id/cineDetail" />
+        <action
+            android:id="@+id/action_cineList_to_cineCreate"
+            app:destination="@id/cineCreate" />
+    </fragment>
+    <fragment
+        android:id="@+id/cineCreate"
+        android:name="com.csf.cining.fragments.cines.CreateFragment"
+        android:label="fragment_cine_create"
+        tools:layout="@layout/fragment_cine_create">
+        <action
+            android:id="@+id/action_cineCreate_to_cineList"
+            app:destination="@id/cineList" />
+        <argument
+            android:name="com.csf.cining.entities.Cine.id"
+            app:argType="integer"
+            android:defaultValue="0"/>
+    </fragment>
+    <fragment
+        android:id="@+id/cineDetail"
+        android:name="com.csf.cining.fragments.cines.DetailFragment"
+        android:label="fragment_cine_detail"
+        tools:layout="@layout/fragment_cine_detail">
+        <argument
+            android:name="com.csf.cining.entities.Cine.id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_cineDetail_to_cineEdit"
+            app:destination="@id/cineCreate" />
+    </fragment>
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.csf.cining.activities.SettingsActivity"
+        android:label="SettingsActivity" />
+    <fragment
+        android:id="@+id/map"
+        android:name="com.csf.cining.fragments.cines.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
+</navigation>
