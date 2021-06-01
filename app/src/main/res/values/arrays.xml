@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lang_text">
+        <item>Default</item>
+        <item>@string/english</item>
+        <item>@string/spanish</item>
+    </string-array>
+    <string-array name="lang_values">
+        <item>auto</item>
+        <item>en</item>
+        <item>es</item>
+    </string-array>
+
+    <string-array name="theme_text">
+        <item>Default</item>
+        <item>@string/light</item>
+        <item>@string/dark</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>auto</item>
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+</resources>

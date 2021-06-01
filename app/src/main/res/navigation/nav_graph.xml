@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.csf.cining.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.csf.cining.fragments.users.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_listActivity"
+            app:destination="@id/listActivity" />
+        <action
+            android:id="@+id/action_login_to_userCreate"
+            app:destination="@id/userCreate" />
+    </fragment>
+    <activity
+        android:id="@+id/listActivity"
+        android:name="com.csf.cining.activities.ListActivity"
+        android:label="activity_list"
+        tools:layout="@layout/activity_list" />
+    <fragment
+        android:id="@+id/userCreate"
+        android:name="com.csf.cining.fragments.users.CreateFragment"
+        android:label="fragment_user_create"
+        tools:layout="@layout/fragment_user_create">
+        <action
+            android:id="@+id/action_userCreate_to_login"
+            app:destination="@id/login" />
+    </fragment>
+</navigation>

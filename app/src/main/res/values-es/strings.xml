@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_sign_up">Registrarse</string>
+    <string name="action_sign_in_short">Ingresar</string>
+    <string name="sign_up_here">Crear usuario</string>
+    <string name="welcome">Bienvenidx!</string>
+    <string name="invalid_username">Usuario inválido</string>
+    <string name="invalid_password">La contraseña debe tener > 5 caracteres</string>
+    <string name="login_failed">Login fallido</string>
+    <string name="password">"  Contraseña"</string>
+    <string name="username">"  Usuario"</string>
+    <string name="title_activity_settings">Preferencias</string>
+    <string name="cine_title">Título</string>
+    <string name="cine_image_caption">Imagen cine</string>
+    <string name="settings">Preferencias</string>
+    <string name="website">"  Website"</string>
+    <string name="save">Guardar</string>
+    <string name="name">"  Nombre"</string>
+    <string name="address">"  Dirección"</string>
+    <string name="latitude">"  Latitud"</string>
+    <string name="longitude">"  Longitud"</string>
+    <string name="create_cine">"  Crear cine"</string>
+    <string name="map">Mapa</string>
+    <string name="language">Idioma</string>
+    <string name="theme">Tema</string>
+    <string name="cancel">Cancelar</string>
+    <string name="spanish">Español</string>
+    <string name="english">Ingles</string>
+    <string name="light">Claro</string>
+    <string name="dark">Oscuro</string>
+    <string name="sign_up_incorrect">Combinacion de usuario incorrecta, intente de nuevo</string>
+    <string name="incomplete_username">Nombre de usuario obligatorio</string>
+    <string name="incomplete_email">Email obligatorio</string>
+    <string name="incomplete_password">Contraseña obligatoria</string>
+    <string name="incomplete_name">Por favor complete el nombre</string>
+    <string name="incomplete_address">Complete la direccion o las coordenadas</string>
+    <string name="incomplete_coordinates">Complete la direccion o las coordenadas</string>
+    <string name="going_settings">Ingresando a ajustes</string>
+</resources>
