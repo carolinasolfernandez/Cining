@@ -4,12 +4,15 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.csf.cining.entities.Cine
+import com.bumptech.glide.Glide
 import com.csf.cining.R
 import com.csf.cining.database.AppDatabase
+import com.csf.cining.entities.Cine
+
 
 class ListAdapter(
     private var cineList: MutableList<Cine>,
@@ -24,7 +27,9 @@ class ListAdapter(
     }
 
     override fun onBindViewHolder(holder: CineHolder, position: Int) {
-        cineList[position].name.let { holder.setName(it) }
+        cineList[position].let {
+            holder.setName(it)
+        }
         holder.getCardLayout().setOnClickListener {
             onItemClick(cineList[position])
         }
@@ -45,9 +50,15 @@ class ListAdapter(
     class CineHolder(v: View) : RecyclerView.ViewHolder(v) {
         private var view: View = v
 
-        fun setName(name: String) {
+        fun setName(cine: Cine) {
             val txt: TextView = view.findViewById(R.id.txt_name_item)
-            txt.text = name
+            val img: ImageView = view.findViewById(R.id.image_view)
+            txt.text = cine.name
+            var url = cine.image
+            if (url == ""){
+                url = "https://inmobiliare.com/himalaya/wp-content/uploads/2020/08/C%C3%B3mo-ser%C3%A1-la-nueva-normalidad-en-los-cines-inmobiliare.jpg"
+            }
+            Glide.with(view.context).load(url).into(img);
         }
 
         fun getCardLayout(): CardView {

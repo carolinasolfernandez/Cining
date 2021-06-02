@@ -13,25 +13,26 @@
         android:layout_height="41dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="100dp"
         android:text="@string/save"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
     <EditText
         android:id="@+id/txtCineName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
+        android:hint="@string/name"
         android:inputType="textShortMessage"
         app:drawableLeftCompat="@drawable/ic_baseline_local_movies_24"
-        android:hint="@string/name"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline5"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <EditText
         android:id="@+id/txtCineAddress"
@@ -83,6 +84,19 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/txtCineLatitude"/>
+
+    <EditText
+        android:id="@+id/txtCineImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textUri"
+        android:hint="@string/image_url"
+        app:drawableLeftCompat="@drawable/ic_baseline_image_24"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/txtCineLongitude"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

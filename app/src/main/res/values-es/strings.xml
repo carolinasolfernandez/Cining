@@ -19,6 +19,7 @@
     <string name="address">"  Dirección"</string>
     <string name="latitude">"  Latitud"</string>
     <string name="longitude">"  Longitud"</string>
+    <string name="image_url">"  Imagen"</string>
     <string name="create_cine">"  Crear cine"</string>
     <string name="map">Mapa</string>
     <string name="language">Idioma</string>
