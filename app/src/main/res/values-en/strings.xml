@@ -24,6 +24,7 @@
     <string name="website">"  Website"</string>
     <string name="latitude">"  Latitude"</string>
     <string name="longitude">"  Longitude"</string>
+    <string name="image_url">"  Image"</string>
     <string name="create_cine">Create cine</string>
 
     <!-- Strings used for bottom bar -->

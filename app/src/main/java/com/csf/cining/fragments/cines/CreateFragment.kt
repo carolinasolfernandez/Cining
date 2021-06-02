@@ -2,16 +2,19 @@ package com.csf.cining.fragments.cines
 
 import android.os.Bundle
 import android.text.TextUtils
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.FrameLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.csf.cining.R
 import com.csf.cining.database.AppDatabase
 import com.csf.cining.entities.Cine
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -24,6 +27,7 @@ class CreateFragment : Fragment() {
     private lateinit var website: EditText
     private lateinit var latitude: EditText
     private lateinit var longitude: EditText
+    private lateinit var image: EditText
     private lateinit var button: Button
 
     override fun onCreateView(
@@ -51,6 +55,7 @@ class CreateFragment : Fragment() {
         website = v.findViewById(R.id.txtCineWebsite)
         latitude = v.findViewById(R.id.txtCineLatitude)
         longitude = v.findViewById(R.id.txtCineLongitude)
+        image = v.findViewById(R.id.txtCineImage)
         button = v.findViewById(R.id.create_button)
 
         if (cine != null) {
@@ -59,7 +64,7 @@ class CreateFragment : Fragment() {
             website.setText(cine.website)
             latitude.setText("" + cine.latitude)
             longitude.setText("" + cine.longitude)
-
+            image.setText(cine.image)
         }
 
         val db = AppDatabase.getAppDatabase(v.context)!!
@@ -70,7 +75,10 @@ class CreateFragment : Fragment() {
             if (isComplete(name, getString(R.string.incomplete_name)) && (
                         isComplete(address, getString(R.string.incomplete_address)) || (
                                 isComplete(latitude, getString(R.string.incomplete_coordinates)) &&
-                                        isComplete(longitude, getString(R.string.incomplete_coordinates))
+                                        isComplete(
+                                            longitude,
+                                            getString(R.string.incomplete_coordinates)
+                                        )
                                 )
                         )
             ) {
@@ -86,6 +94,7 @@ class CreateFragment : Fragment() {
                     cine.website = website.text.toString()
                     cine.latitude = latitudeStr.toDouble()
                     cine.longitude = longitudeStr.toDouble()
+                    cine.image = image.text.toString()
                     cineDao.updateCine(cine)
                 } else {
                     cineDao.createCine(
@@ -95,7 +104,7 @@ class CreateFragment : Fragment() {
                             website.text.toString(),
                             latitudeStr.toDouble(),
                             longitudeStr.toDouble(),
-                            ""
+                            image.text.toString()
                         )
                     )
                 }
@@ -106,6 +115,7 @@ class CreateFragment : Fragment() {
                 website.text.clear()
                 latitude.text.clear()
                 longitude.text.clear()
+                image.text.clear()
 
                 val action = CreateFragmentDirections.actionCineCreateToCineList()
                 v.findNavController().navigate(action)
@@ -115,7 +125,10 @@ class CreateFragment : Fragment() {
 
     private fun isComplete(anEditText: EditText, anString: String): Boolean {
         if (TextUtils.isEmpty(anEditText.text.toString())) {
-            Snackbar.make(v, anString, Snackbar.LENGTH_LONG).show()
+            val bottomNavView: BottomNavigationView = activity?.findViewById(R.id.bottom_bar)!!
+            Snackbar.make(v, anString, Snackbar.LENGTH_LONG).apply {
+                anchorView = bottomNavView
+            }.show()
             return false
         }
         return true

@@ -8,8 +8,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_cine"
         android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
-        android:layout_height="474dp" />
+        android:layout_height="453dp"
+        android:layout_marginTop="50dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/newCineButton"
