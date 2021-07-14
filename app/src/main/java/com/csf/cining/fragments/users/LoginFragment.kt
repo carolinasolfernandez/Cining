@@ -15,12 +15,13 @@ import com.csf.cining.database.AppDatabase
 import com.csf.cining.database.UserDao
 import com.csf.cining.entities.User
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : Fragment() {
     lateinit var v: View
     lateinit var userDao: UserDao
 
-    lateinit var usernameDataInput: EditText
+    lateinit var emailDataInput: EditText
     lateinit var passDataInput: EditText
     lateinit var loginButton: Button
     lateinit var signUp: TextView
@@ -31,7 +32,7 @@ class LoginFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_login, container, false)
-        usernameDataInput = v.findViewById(R.id.txtUsername)
+        emailDataInput = v.findViewById(R.id.txtEmail)
         passDataInput = v.findViewById(R.id.editTextTextPassword)
         loginButton = v.findViewById(R.id.buttonLogin)
         signUp = v.findViewById(R.id.sign_up)
@@ -42,26 +43,31 @@ class LoginFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        val db = AppDatabase.getAppDatabase(v.context)!!
-        userDao = db.userDao()
-
-        //userDao.insertPerson(User("caro", "caro"))
-
+        //val db = AppDatabase.getAppDatabase(v.context)!!
+        //userDao = db.userDao()
+        //userDao.insertPerson(User("caro", "caro@gmail.com", "caro"))
         loginButton.setOnClickListener {
-            val user = verifyUser(usernameDataInput.text.toString(), passDataInput.text.toString())
-            if (user != null) {
-                Snackbar.make(v, "Hi ${user.username}!", Snackbar.LENGTH_LONG).show()
-                val action = ActionOnlyNavDirections(R.id.action_login_to_listActivity)
-                v.findNavController().navigate(action)
-            } else {
-                usernameDataInput.text.clear()
-                passDataInput.text.clear()
-                Snackbar.make(
-                    v,
-                    getString(R.string.sign_up_incorrect),
-                    Snackbar.LENGTH_LONG
-                ).show()
-            }
+            //val user = verifyUser(emailDataInput.text.toString(), passDataInput.text.toString())
+            FirebaseAuth.getInstance()
+                .signInWithEmailAndPassword(
+                    emailDataInput.text.toString(),
+                    passDataInput.text.toString()
+                )
+                .addOnCompleteListener(requireActivity()) { task ->
+                    if (task.isSuccessful) {
+                        Snackbar.make(v, "Hi ${emailDataInput.text}!", Snackbar.LENGTH_LONG).show()
+                        val action = ActionOnlyNavDirections(R.id.action_login_to_listActivity)
+                        v.findNavController().navigate(action)
+                    } else {
+                        emailDataInput.text.clear()
+                        passDataInput.text.clear()
+                        Snackbar.make(
+                            v,
+                            getString(R.string.sign_up_incorrect),
+                            Snackbar.LENGTH_LONG
+                        ).show()
+                    }
+                }
         }
 
         signUp.setOnClickListener {
@@ -70,10 +76,10 @@ class LoginFragment : Fragment() {
         }
     }
 
-    private fun verifyUser(username: String, password: String): User? {
+    private fun verifyUser(email: String, password: String): User? {
         val users = userDao.getUsers() as MutableList<User>
         for (user in users) {
-            if (user.verifyUser(username, password)) {
+            if (user.verifyUser(email, password)) {
                 return user
             }
         }

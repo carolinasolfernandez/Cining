@@ -26,8 +26,8 @@
             app:destination="@id/cineList" />
         <argument
             android:name="com.csf.cining.entities.Cine.id"
-            app:argType="integer"
-            android:defaultValue="0"/>
+            app:argType="string"
+            android:defaultValue=""/>
     </fragment>
     <fragment
         android:id="@+id/cineDetail"
@@ -36,7 +36,7 @@
         tools:layout="@layout/fragment_cine_detail">
         <argument
             android:name="com.csf.cining.entities.Cine.id"
-            app:argType="integer" />
+            app:argType="string" />
         <action
             android:id="@+id/action_cineDetail_to_cineEdit"
             app:destination="@id/cineCreate" />

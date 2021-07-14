@@ -37,4 +37,9 @@
     <string name="incomplete_address">Complete la direccion o las coordenadas</string>
     <string name="incomplete_coordinates">Complete la direccion o las coordenadas</string>
     <string name="going_settings">Ingresando a ajustes</string>
+    <string name="auth_failed">La autenticación falló</string>
+    <string name="short_password">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="invalid_email">Email invalido</string>
+    <string name="take_photo">Tome foto</string>
+    <string name="ask_permission">Habilite su ubicación</string>
 </resources>
