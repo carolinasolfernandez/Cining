@@ -10,19 +10,19 @@
     <Button
         android:id="@+id/create_button"
         android:layout_width="187dp"
-        android:layout_height="41dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="110dp"
         android:text="@string/save"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
     <EditText
         android:id="@+id/txtCineName"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:ems="10"
@@ -36,7 +36,7 @@
 
     <EditText
         android:id="@+id/txtCineAddress"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
@@ -49,7 +49,7 @@
 
     <EditText
         android:id="@+id/txtCineWebsite"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
@@ -62,41 +62,44 @@
 
     <EditText
         android:id="@+id/txtCineLatitude"
-        android:layout_width="wrap_content"
+        android:layout_width="145dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="numberSigned|numberDecimal"
         android:hint="@string/latitude"
-        app:drawableLeftCompat="@drawable/ic_baseline_location_on_24"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/txtCineWebsite"/>
-    <EditText
-        android:id="@+id/txtCineLongitude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
         android:inputType="numberSigned|numberDecimal"
-        android:hint="@string/longitude"
         app:drawableLeftCompat="@drawable/ic_baseline_location_on_24"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/txtCineLatitude"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtCineWebsite" />
 
     <EditText
-        android:id="@+id/txtCineImage"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtCineLongitude"
+        android:layout_width="145dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="textUri"
+        android:hint="@string/longitude"
+        android:inputType="numberSigned|numberDecimal"
+        app:drawableLeftCompat="@drawable/ic_baseline_location_on_24"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/txtCineWebsite" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_baseline_camera_alt_24"
+        android:ems="10"
         android:hint="@string/image_url"
-        app:drawableLeftCompat="@drawable/ic_baseline_image_24"
+        android:text="@string/take_photo"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/txtCineLongitude"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtCineLongitude" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -109,14 +112,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="60dp" />
+        app:layout_constraintGuide_end="30dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="60dp" />
+        app:layout_constraintGuide_begin="30dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"

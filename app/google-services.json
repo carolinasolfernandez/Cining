@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "173470314052",
+    "project_id": "cining-64868",
+    "storage_bucket": "cining-64868.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173470314052:android:7ad10f168d39d64030d611",
+        "android_client_info": {
+          "package_name": "com.csf.cining"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173470314052-30tj68a735ls84mo6dutht24t6ccafa1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj7BG9a9iCGuclv8sQFlY56AerGJC5ijg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173470314052-30tj68a735ls84mo6dutht24t6ccafa1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
