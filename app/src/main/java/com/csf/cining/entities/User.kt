@@ -7,14 +7,14 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "users")
 class User(
-    @ColumnInfo(name = "username") var username: String,
+    @ColumnInfo(name = "email") var email: String,
     @ColumnInfo(name = "password") var password: String
 ) {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
 
-    fun verifyUser(username: String, password: String): Boolean {
-        return (username == this.username) and (password == this.password)
+    fun verifyUser(email: String, password: String): Boolean {
+        return (email == this.email) and (password == this.password)
     }
 
 }

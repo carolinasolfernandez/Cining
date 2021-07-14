@@ -3,6 +3,7 @@ package com.csf.cining.database
 import androidx.room.*
 import com.csf.cining.entities.Cine
 
+/*
 @Dao
 interface CineDao {
     @Query("SELECT * FROM cines ORDER BY id")
@@ -20,3 +21,4 @@ interface CineDao {
     @Query("SELECT * FROM cines WHERE id = :id")
     fun getCineById(id: Int): Cine?
 }
+ */
