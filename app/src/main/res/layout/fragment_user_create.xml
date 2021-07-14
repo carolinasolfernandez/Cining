@@ -9,27 +9,10 @@
     tools:context=".fragments.users.CreateFragment">
 
     <EditText
-        android:id="@+id/txtUsername"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
-        android:hint="@string/username"
-        android:inputType="textPersonName"
-        android:padding="5dp"
-        android:textColor="@color/input_text"
-        android:textColorHint="@color/input_text"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline5"
-        android:drawableStart="@drawable/ic_baseline_person_24" />
-
-    <EditText
         android:id="@+id/txtEmail"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:drawableLeft="@drawable/ic_baseline_email_24"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
@@ -39,9 +22,8 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsername"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
         android:drawableStart="@drawable/ic_baseline_email_24" />
-
 
     <EditText
         android:id="@+id/txtPw"

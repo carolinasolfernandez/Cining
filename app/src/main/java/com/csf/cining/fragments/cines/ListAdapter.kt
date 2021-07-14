@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.csf.cining.R
 import com.csf.cining.database.AppDatabase
 import com.csf.cining.entities.Cine
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class ListAdapter(
@@ -38,8 +39,10 @@ class ListAdapter(
     fun removeAt(cineId: Int) {
         val cine = cineList[cineId]
         cineList.removeAt(cineId)
-        val db = AppDatabase.getAppDatabase(context)!!
-        db.cineDao().deleteCine(cine)
+        FirebaseFirestore.getInstance().collection("cines").document(cine.id).delete()
+
+        //val db = AppDatabase.getAppDatabase(context)!!
+        //db.cineDao().deleteCine(cine)
         notifyItemRemoved(cineId)
     }
 
@@ -55,7 +58,7 @@ class ListAdapter(
             val img: ImageView = view.findViewById(R.id.image_view)
             txt.text = cine.name
             var url = cine.image
-            if (url == ""){
+            if (url == null || url == ""){
                 url = "https://inmobiliare.com/himalaya/wp-content/uploads/2020/08/C%C3%B3mo-ser%C3%A1-la-nueva-normalidad-en-los-cines-inmobiliare.jpg"
             }
             Glide.with(view.context).load(url).into(img);
