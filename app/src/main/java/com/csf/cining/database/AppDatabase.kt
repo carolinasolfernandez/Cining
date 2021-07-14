@@ -5,12 +5,12 @@ import androidx.room.*
 import com.csf.cining.entities.Cine
 import com.csf.cining.entities.User
 
-
-@Database(entities = [User::class, Cine::class], version = 1, exportSchema = false)
+//@Database(entities = [User::class, Cine::class], version = 1, exportSchema = false)
+@Database(entities = [User::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
-    abstract fun cineDao(): CineDao
+    //abstract fun cineDao(): CineDao
 
     companion object {
         var INSTANCE: AppDatabase? = null
