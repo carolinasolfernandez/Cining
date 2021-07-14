@@ -45,5 +45,10 @@
     <string name="incomplete_address">Please complete the address</string>
     <string name="incomplete_coordinates">Please complete the coordinates</string>
     <string name="going_settings">Going to settings</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="short_password">Password must be at least 6 characters</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="take_photo">Take photo</string>
+    <string name="ask_permission">Turn on location</string>
 </resources>
 
